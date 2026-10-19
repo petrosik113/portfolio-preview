@@ -474,6 +474,9 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
 
 [hidden]{display:none!important}
 
+.count{margin:0 0 14px;font-size:var(--fs-small);font-weight:700;color:var(--orange)}
+.sec-head .count{margin:0}
+
 .sec-head p{max-width:none}
 @media (min-width:761px){.nw{white-space:nowrap}}
 
@@ -576,6 +579,7 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
         <h2>Не рассказываю, а показываю, как это работает</h2>
         <p class="muted">Каждое решение уже работает. Нажмите на видео и посмотрите изнутри за пару минут.</p>
       </div>
+      <p class="count" id="demo-count" aria-live="polite"></p>
       <div class="chips" role="group" aria-label="Фильтр решений">
         <button class="chip" id="f-all" data-f="all" aria-pressed="true">Все</button>
         <button class="chip" id="f-exp" data-f="exp" aria-pressed="false">Для экспертов и школ</button>
@@ -654,6 +658,7 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
         <div class="kicker">Как это может выглядеть у вас</div>
         <h2>Узнайте свою ситуацию</h2>
         <p class="muted">Это не истории конкретных клиентов, а типичные ситуации. <span class="nw">Фразы в кавычках дословно из интервью с предпринимателями.</span></p>
+        <p class="count" id="cases-count" aria-live="polite"></p>
       </div>
       <div class="cases">
         <div class="case sc">
@@ -1240,6 +1245,12 @@ function cols(){return getComputedStyle(gridEl).gridTemplateColumns.split(' ').l
 function step(){var c=cols();return c>=3?c:4}
 var rows=1, shown=step();
 function matching(){return cards.filter(function(c){return filter==='all'||c.dataset.c.split(' ').indexOf(filter)>-1})}
+function plural(n,a,b,c){var d=n%10,h=n%100;return d===1&&h!==11?a:d>=2&&d<=4&&(h<12||h>14)?b:c}
+function counts(total,open,word,more,hide,box,step){
+  box.textContent='Всего '+total+'\u00a0'+word+' · открыто '+Math.min(open,total);
+  more.textContent='Показать ещё '+Math.min(Math.max(total-open,0),step)+' · '+Math.min(open,total)+'/'+total;
+  hide.textContent='Скрыть · '+Math.min(open,total)+'/'+total;
+}
 function renderGrid(){
   var m=matching(), s=step();
   if(shown<s)shown=s;
@@ -1249,6 +1260,7 @@ function renderGrid(){
   moreBtn.parentNode.hidden=m.length<=s;
   moreBtn.hidden=left<=0; moreBtn.textContent='Показать ещё '+Math.min(Math.max(left,0),s);
   hideBtn.hidden=shown<=s;
+  counts(m.length,shown,'видео',moreBtn,hideBtn,document.getElementById('demo-count'),s);
 }
 moreBtn.addEventListener('click',function(){rows++;shown=rows*step();renderGrid()});
 hideBtn.addEventListener('click',function(){rows=1;shown=step();renderGrid();document.getElementById('demo').scrollIntoView({behavior:'smooth'})});
@@ -1270,6 +1282,8 @@ renderGrid();
     more.parentNode.hidden=list.length<=STEP;
     more.hidden=left<=0; more.textContent='Показать ещё '+Math.min(Math.max(left,0),STEP);
     hide.hidden=shown<=STEP;
+    var n=list.length;
+    counts(n,shown,plural(n,'ситуация','ситуации','ситуаций'),more,hide,document.getElementById('cases-count'),STEP);
   }
   more.addEventListener('click',function(){shown+=STEP;render()});
   hide.addEventListener('click',function(){shown=STEP;render();document.getElementById('cases').scrollIntoView({behavior:'smooth'})});
