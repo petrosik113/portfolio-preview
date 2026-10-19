@@ -440,6 +440,7 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
 .final-col--go{border-color:rgba(242,163,94,.45)}
 .final-col--go small{color:var(--orange)}
 .final-col .contact{flex-direction:column;align-items:stretch;margin-top:6px}
+.final-col .contact .btn{justify-content:center}
 @media (max-width:860px){.final-grid{grid-template-columns:1fr}}
 .order-dlg .contact{flex-direction:column;align-items:stretch}
 
@@ -495,13 +496,13 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#4EA4F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </span>Никита Ангол</a>
     <nav class="nav-links">
-      <a href="#demo">Решения</a><a href="#cases">Примеры</a><a href="#about">Обо мне</a><a href="#how">Как работаю</a>
+      <a href="#demo">Решения</a><a href="#cases">Примеры</a><a href="#how">Как работаю</a>
     </nav>
     <a class="btn btn-cta" href="#contact">Написать «РАЗБОР»</a>
     <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="m-menu"><i></i><i></i><i></i></button>
   </div>
   <nav class="m-menu" id="m-menu" hidden>
-    <a href="#demo">Решения</a><a href="#cases">Примеры</a><a href="#about">Обо мне</a><a href="#how">Как работаю</a>
+    <a href="#demo">Решения</a><a href="#cases">Примеры</a><a href="#how">Как работаю</a>
     <a class="btn btn-cta" href="#contact">Написать «РАЗБОР»</a>
   </nav>
 </header>
@@ -703,30 +704,7 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
           <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-cta btn-more" type="button" data-order="Все клиенты и сроки в одном окне">Хочу так же</button></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="about" data-code='человек.свой = true'>
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="kicker">Обо мне</div>
-        <h2>Свой человек, который наведёт порядок</h2>
-      </div>
-      <div class="about-grid">
-        <figure class="about-photo"><img src="img/nikita-mirror.jpg" alt="Никита Ангол" loading="lazy"></figure>
-        <div class="about-text">
-          <p class="about-lead">Привет, я Никита. Пару лет назад я работал на заводе: смены день-ночь, подработки, либо пахал, либо спал. Однажды по дороге на ночную смену развернулся на остановке и пошёл учиться.</p>
-          <p class="muted">Теперь делаю для бизнеса то же, что делал на заводе: настраиваю так, чтобы всё работало без остановки. Только вместо станков у вас заявки, клиенты и деньги. Сначала разбираюсь, что у вас болит, и только потом предлагаю решение.</p>
-          <ul class="why"><li>Сам работал на износ, поэтому понимаю вашу усталость не по книжкам.</li><li>Говорю по-человечески: без терминов и «это сложно объяснить».</li><li>Не обещаю, а показываю: у каждого решения есть живое демо.</li><li>Не пропадаю после запуска: учу пользоваться и остаюсь на связи.</li></ul>
-          <p class="muted about-human">А ещё пишу стихи и делаю близким подарки с нейросетями. Так что скучных решений не будет.</p>
-        </div>
-      </div>
-      <div class="story">
-        <div><small>раньше</small><b>Оператор линии</b>Смены день-ночь на заводе. Либо пахал, либо спал.</div>
-        <div><small>поворот</small><b>«Так не иди»</b>Развернулся на остановке перед ночной сменой и пошёл учиться.</div>
-        <div><small>первые клиенты</small><b>Сайты и боты</b>Клиенты возвращаются за новым и приводят знакомых.</div>
-        <div><small>сейчас</small><b>30+ решений</b>Для экспертов, салонов, стройки, бухгалтерии и не только.</div>
-      </div>
+      <div class="more"><button class="btn btn-ghost" id="cases-more" type="button">Показать ещё</button></div>
     </div>
   </section>
 
@@ -763,13 +741,13 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
             <small>Не знаете, с чего начать?</small>
             <h3>Напишите слово <span class="word">«РАЗБОР»</span></h3>
             <p class="muted">Бесплатно разберём, где у вас уходит время, и что можно забрать на автомат.</p>
-            <div class="contact"><a class="btn btn-msg btn-tg" data-msgr="tg" href="https://t.me/Nikita_Angol" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="#2AABEE" d="M21.4 4.6 2.9 11.8c-.9.4-.9 1.6.1 1.9l4.5 1.4 1.8 5.5c.2.7 1.1.9 1.6.4l2.6-2.4 4.7 3.5c.6.4 1.4.1 1.6-.6l3-15.5c.2-.9-.6-1.7-1.4-1.4zM17 8.3l-7.4 6.6-.3 3.1-1.2-3.8 8.5-5.6c.4-.3.7.1.4.3z"/></svg>Написать в Telegram</a><a class="btn btn-msg btn-ig" data-msgr="ig" href="https://ig.me/m/nikita.angol" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F7A34B"/><stop offset=".5" stop-color="#E1306C"/><stop offset="1" stop-color="#9B4DE0"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="url(#igg)" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="url(#igg)" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="#E1306C"/></svg>Написать в Instagram</a><a class="btn btn-msg btn-wa" data-msgr="wa" href="https://wa.me/375298596741" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="#25D366" stroke-width="2" stroke-linejoin="round" d="M20.5 11.8a8.5 8.5 0 0 1-12.4 7.6L3.5 20.5l1.2-4.4A8.5 8.5 0 1 1 20.5 11.8z"/><path fill="#25D366" d="M9.2 7.6c-.4 0-.9.4-1 1-.3 1.4.4 3.2 1.9 4.8 1.6 1.6 3.4 2.4 4.8 2.1.6-.1 1-.6 1-1l.1-.9c0-.2-.1-.4-.3-.5l-1.6-.8c-.2-.1-.5 0-.6.1l-.6.8c-1.1-.4-2.2-1.5-2.7-2.7l.8-.6c.2-.1.2-.4.1-.6l-.8-1.6c-.1-.2-.3-.3-.5-.3z"/></svg>Написать в WhatsApp</a></div>
+            <div class="contact"><button class="btn btn-main" type="button" data-order-msg="Разбор">Написать «РАЗБОР»</button></div>
           </div>
           <div class="final-col final-col--go" data-msg="Здравствуйте, Никита! Пишу с сайта: хочу сразу заказать автоматизацию для своего бизнеса. Давайте обсудим задачу, сроки и стоимость.">
             <small>Уже знаете, что нужно?</small>
             <h3>Сразу к делу</h3>
             <p class="muted">Без разбора: обсудим задачу, сроки и стоимость и начнём работу.</p>
-            <div class="contact"><a class="btn btn-msg btn-tg" data-msgr="tg" href="https://t.me/Nikita_Angol" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="#2AABEE" d="M21.4 4.6 2.9 11.8c-.9.4-.9 1.6.1 1.9l4.5 1.4 1.8 5.5c.2.7 1.1.9 1.6.4l2.6-2.4 4.7 3.5c.6.4 1.4.1 1.6-.6l3-15.5c.2-.9-.6-1.7-1.4-1.4zM17 8.3l-7.4 6.6-.3 3.1-1.2-3.8 8.5-5.6c.4-.3.7.1.4.3z"/></svg>Написать в Telegram</a><a class="btn btn-msg btn-ig" data-msgr="ig" href="https://ig.me/m/nikita.angol" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igg2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F7A34B"/><stop offset=".5" stop-color="#E1306C"/><stop offset="1" stop-color="#9B4DE0"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="url(#igg2)" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="url(#igg2)" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="#E1306C"/></svg>Написать в Instagram</a><a class="btn btn-msg btn-wa" data-msgr="wa" href="https://wa.me/375298596741" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="#25D366" stroke-width="2" stroke-linejoin="round" d="M20.5 11.8a8.5 8.5 0 0 1-12.4 7.6L3.5 20.5l1.2-4.4A8.5 8.5 0 1 1 20.5 11.8z"/><path fill="#25D366" d="M9.2 7.6c-.4 0-.9.4-1 1-.3 1.4.4 3.2 1.9 4.8 1.6 1.6 3.4 2.4 4.8 2.1.6-.1 1-.6 1-1l.1-.9c0-.2-.1-.4-.3-.5l-1.6-.8c-.2-.1-.5 0-.6.1l-.6.8c-1.1-.4-2.2-1.5-2.7-2.7l.8-.6c.2-.1.2-.4.1-.6l-.8-1.6c-.1-.2-.3-.3-.5-.3z"/></svg>Написать в WhatsApp</a></div>
+            <div class="contact"><button class="btn btn-cta" type="button" data-order-msg="Сразу к делу">Сразу к делу</button></div>
           </div>
         </div>
         <p class="ig-tip" hidden></p>
@@ -785,7 +763,7 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
 <dialog class="more-dlg order-dlg" id="order" aria-labelledby="order-h">
   <div class="in">
     <button class="x" type="button" aria-label="Закрыть">×</button>
-    <h4>Заказать</h4>
+    <h4 id="order-k">Заказать</h4>
     <h3 id="order-h">Где вам удобнее написать?</h3>
     <p id="order-what"></p>
     <div class="contact" data-msg=""><a class="btn btn-msg btn-tg" data-msgr="tg" href="https://t.me/Nikita_Angol" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="#2AABEE" d="M21.4 4.6 2.9 11.8c-.9.4-.9 1.6.1 1.9l4.5 1.4 1.8 5.5c.2.7 1.1.9 1.6.4l2.6-2.4 4.7 3.5c.6.4 1.4.1 1.6-.6l3-15.5c.2-.9-.6-1.7-1.4-1.4zM17 8.3l-7.4 6.6-.3 3.1-1.2-3.8 8.5-5.6c.4-.3.7.1.4.3z"/></svg>Написать в Telegram</a><a class="btn btn-msg btn-ig" data-msgr="ig" href="https://ig.me/m/nikita.angol" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igg3" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F7A34B"/><stop offset=".5" stop-color="#E1306C"/><stop offset="1" stop-color="#9B4DE0"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="url(#igg3)" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="url(#igg3)" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="#E1306C"/></svg>Написать в Instagram</a><a class="btn btn-msg btn-wa" data-msgr="wa" href="https://wa.me/375298596741" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="#25D366" stroke-width="2" stroke-linejoin="round" d="M20.5 11.8a8.5 8.5 0 0 1-12.4 7.6L3.5 20.5l1.2-4.4A8.5 8.5 0 1 1 20.5 11.8z"/><path fill="#25D366" d="M9.2 7.6c-.4 0-.9.4-1 1-.3 1.4.4 3.2 1.9 4.8 1.6 1.6 3.4 2.4 4.8 2.1.6-.1 1-.6 1-1l.1-.9c0-.2-.1-.4-.3-.5l-1.6-.8c-.2-.1-.5 0-.6.1l-.6.8c-1.1-.4-2.2-1.5-2.7-2.7l.8-.6c.2-.1.2-.4.1-.6l-.8-1.6c-.1-.2-.3-.3-.5-.3z"/></svg>Написать в WhatsApp</a></div>
@@ -1284,6 +1262,20 @@ document.querySelectorAll('.chip').forEach(function(ch){
 window.addEventListener('resize',function(){shown=rows*step();renderGrid()});
 renderGrid();
 (function(){
+  var list=[].slice.call(document.querySelectorAll('#cases .case')), more=document.getElementById('cases-more'), STEP=4, shown=STEP;
+  var hide=document.createElement('button'); hide.className='btn btn-ghost'; hide.type='button'; hide.textContent='Скрыть'; more.parentNode.appendChild(hide);
+  function render(){
+    list.forEach(function(c,i){c.hidden=i>=shown});
+    var left=list.length-shown;
+    more.parentNode.hidden=list.length<=STEP;
+    more.hidden=left<=0; more.textContent='Показать ещё '+Math.min(Math.max(left,0),STEP);
+    hide.hidden=shown<=STEP;
+  }
+  more.addEventListener('click',function(){shown+=STEP;render()});
+  hide.addEventListener('click',function(){shown=STEP;render();document.getElementById('cases').scrollIntoView({behavior:'smooth'})});
+  render();
+})();
+(function(){
   var dlg=document.getElementById('player'), f=null;
   document.querySelectorAll('[data-video]').forEach(function(b){
     b.addEventListener('click',function(){
@@ -1331,13 +1323,22 @@ document.querySelectorAll('[data-msgr]').forEach(function(a){
   });
 });
 (function(){
-  var dlg=document.getElementById('order'), what=document.getElementById('order-what'), box=dlg.querySelector('[data-msg]');
+  var dlg=document.getElementById('order'), what=document.getElementById('order-what'), box=dlg.querySelector('[data-msg]'), kick=document.getElementById('order-k');
   document.querySelectorAll('[data-order]').forEach(function(b){
     b.addEventListener('click',function(){
       var name=b.dataset.order;
+      kick.textContent='Заказать';
       box.dataset.msg=name?'Здравствуйте, Никита! Пишу с сайта: хочу заказать «'+name+'». Давайте обсудим, как настроить это под мой бизнес.':'Здравствуйте, Никита! Пишу с сайта: хочу сразу заказать автоматизацию для своего бизнеса. Давайте обсудим задачу, сроки и стоимость.';
       what.textContent=name?'Решение: «'+name+'». Сообщение уже готово, останется нажать «отправить».':'Сообщение уже готово, останется нажать «отправить».';
       var open=b.closest('dialog'); if(open&&open!==dlg)open.close();
+      if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
+    });
+  });
+  document.querySelectorAll('[data-order-msg]').forEach(function(b){
+    b.addEventListener('click',function(){
+      box.dataset.msg=b.closest('[data-msg]').dataset.msg;
+      kick.textContent=b.dataset.orderMsg;
+      what.textContent='Сообщение уже готово, останется нажать «отправить».';
       if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
     });
   });
