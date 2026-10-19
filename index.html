@@ -473,6 +473,9 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
 
 [hidden]{display:none!important}
 
+.sec-head p{max-width:none}
+@media (min-width:761px){.nw{white-space:nowrap}}
+
 @media (max-width:599px){
   .hero{min-height:calc(100svh - 64px - env(safe-area-inset-top,0px));padding-block:10px 22px}
   .hero-text{display:flex;flex-direction:column;justify-content:flex-end;gap:12px}
@@ -649,7 +652,7 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
       <div class="sec-head">
         <div class="kicker">Как это может выглядеть у вас</div>
         <h2>Узнайте свою ситуацию</h2>
-        <p class="muted">Это не истории конкретных клиентов, а типичные ситуации. Фразы в кавычках дословно из интервью с предпринимателями.</p>
+        <p class="muted">Это не истории конкретных клиентов, а типичные ситуации. <span class="nw">Фразы в кавычках дословно из интервью с предпринимателями.</span></p>
       </div>
       <div class="cases">
         <div class="case sc">
