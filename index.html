@@ -477,16 +477,25 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
 
 [hidden]{display:none!important}
 
+.ticker{overflow:hidden;border-block:1px solid var(--border);background:var(--surface);padding-block:18px}
+.ticker-track{display:flex;width:max-content;animation:ticker 60s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-row{display:flex;flex:none}
+.ticker-row span{white-space:nowrap;padding-inline:28px;font-size:clamp(15px,1.2vw,18px);font-weight:600;color:#D2DAE2}
+.ticker-row span::before{content:"✓";color:var(--green);margin-right:10px;font-weight:800}
+@keyframes ticker{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker{overflow-x:auto}.ticker-track{animation:none}}
+
 .btn,.chip{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease,color .18s ease}
 @media (hover:hover){
   .btn:hover{transform:translateY(-2px)}
-  .btn-main:hover{background:#8ACBFF;box-shadow:0 0 0 3px rgba(78,164,245,.35),0 10px 28px rgba(78,164,245,.55)}
-  .btn-cta:hover{background:var(--orange);border-color:var(--orange);color:#1A1208;box-shadow:0 0 0 3px rgba(242,163,94,.3),0 10px 28px rgba(242,163,94,.5)}
-  .btn-ghost:hover{background:var(--accent-bg);border-color:var(--accent);color:#fff;box-shadow:0 0 0 3px rgba(78,164,245,.25),0 8px 22px rgba(78,164,245,.3)}
-  .btn-msg:hover{border-color:var(--m-c);box-shadow:0 0 0 3px var(--m-bd),0 8px 24px var(--m-bd)}
+  .btn-main:hover{background:#fff;border-color:#fff;color:#0B1420}
+  .btn-cta:hover{background:var(--orange);border-color:var(--orange);color:#1A1208}
+  .btn-ghost:hover{background:var(--text);border-color:var(--text);color:#0B1420}
+  .btn-msg:hover{background:var(--m-bg-h);border-color:var(--m-c)}
   .chip:hover{border-color:var(--accent);color:var(--text)}
 }
-.btn:active{transform:translateY(0) scale(.97);box-shadow:none}
+.btn:active{transform:translateY(0) scale(.97)}
 
 .count{margin:0 0 14px;font-size:var(--fs-small);font-weight:700;color:var(--orange)}
 .sec-head .count{margin:0}
@@ -515,13 +524,13 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
     <nav class="nav-links">
       <a href="#demo">Решения</a><a href="#cases">Примеры</a><a href="#how">Как работаю</a>
     </nav>
-    <div class="nav-btns"><a class="btn btn-cta" href="#contact">Написать «РАЗБОР»</a><button class="btn btn-main" type="button" data-order="" data-order-kick="Сразу к делу">Сразу к делу</button></div>
+    <div class="nav-btns"><a class="btn btn-cta" href="#contact">Написать «РАЗБОР»</a><button class="btn btn-main" type="button" data-order="" data-order-kick="Сразу к делу">Сразу к делу</button></div>
     <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="m-menu"><i></i><i></i><i></i></button>
   </div>
   <nav class="m-menu" id="m-menu" hidden>
     <a href="#demo">Решения</a><a href="#cases">Примеры</a><a href="#how">Как работаю</a>
     <a class="btn btn-cta" href="#contact">Написать «РАЗБОР»</a>
-    <button class="btn btn-main" type="button" data-order="" data-order-kick="Сразу к делу">Сразу к делу</button>
+    <button class="btn btn-main" type="button" data-order="" data-order-kick="Сразу к делу">Сразу к делу</button>
   </nav>
 </header>
 
@@ -544,6 +553,7 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
       </figure>
     </div>
   </section>
+  <div class="ticker" aria-label="Что вы получаете"><div class="ticker-track"><div class="ticker-row"><span>Не сидите в телефоне до полуночи</span><span>Ни один клиент не теряется, даже когда вы не на связи</span><span>Можно уехать в отпуск, и ничего не сломается</span><span>Берёте больше клиентов, не нанимая людей</span><span>Все заявки и деньги видно на одном экране</span><span>Ни в чём не нужно разбираться: делаю и учу</span></div><div class="ticker-row" aria-hidden="true"><span>Не сидите в телефоне до полуночи</span><span>Ни один клиент не теряется, даже когда вы не на связи</span><span>Можно уехать в отпуск, и ничего не сломается</span><span>Берёте больше клиентов, не нанимая людей</span><span>Все заявки и деньги видно на одном экране</span><span>Ни в чём не нужно разбираться: делаю и учу</span></div></div></div>
 
   <section data-code='if (рутина.задачи == 100) { помощь.нужна = true }'>
     <div class="wrap">
@@ -647,7 +657,7 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
         </article>
         <article class="card" data-c="cnt exp">
           <div class="frame vid"><img src="video/d19-insta.jpg" alt="Обложка видео: разбор любого Instagram за пару минут" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/deb98b00-8787-4f15-8be1-e2c291a0aca8" aria-label="Смотреть видео: разбор любого Instagram"><i></i></button><div class="dur">1:07</div></div>
-          <div class="card-body"><span class="pill">для маркетинга</span><h3>Разбор любого Instagram</h3><p>Ссылка на профиль, и через пару минут отчёт: что говорят в роликах, чем цепляют первые 3&nbsp;секунды, вовлечённость и комментарии.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-insta">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Разбор любого Instagram">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">для маркетинга</span><h3>Разбор любого Instagram</h3><p>Ссылка на профиль, и через пару минут отчёт: что говорят в роликах, чем цепляют первые 3&nbsp;секунды, вовлечённость и комментарии.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-insta">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Разбор любого Instagram">Заказать</button></div></div>
         </article>
         <article class="card" data-c="cnt off exp">
           <div class="frame vid"><img src="video/d13-studiya.jpg" alt="Обложка видео: фото и видео нейросетями в одном окне" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/3ca29280-f8a5-44fc-87ec-c6df03da578e" aria-label="Смотреть видео: фото и видео нейросетями в одном окне"><i></i></button><div class="dur">1:20</div></div>
@@ -766,7 +776,7 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
             <small>Уже знаете, что нужно?</small>
             <h3>Сразу к делу</h3>
             <p class="muted">Без разбора: обсудим задачу, сроки и стоимость и начнём работу.</p>
-            <div class="contact"><button class="btn btn-main" type="button" data-order-msg="Сразу к делу">Сразу к делу</button></div>
+            <div class="contact"><button class="btn btn-main" type="button" data-order-msg="Сразу к делу">Сразу к делу</button></div>
           </div>
         </div>
         <p class="ig-tip" hidden></p>
@@ -1205,23 +1215,23 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
 <dialog class="more-dlg" id="m-insta" aria-labelledby="m-insta-h">
   <button class="x" type="button" aria-label="Закрыть">×</button>
   <div class="in">
-    <h3 id="m-insta-h">Разбор любого Instagram за пару минут</h3>
-    <p>Бот в Telegram. Отправляете ссылку на профиль, выбираете, сколько постов взять, и через пару минут получаете три файла: отчёт, таблицу Excel и файл для нейросети. В ролике разобран блог @eleonora_marketing.</p>
-    <h4>Зачем это вам</h4>
+    <h3 id="m-insta-h">Разбор любого Instagram за пару минут</h3>
+    <p>Бот в Telegram. Отправляете ссылку на профиль, выбираете, сколько постов взять, и через пару минут получаете три файла: отчёт, таблицу Excel и файл для нейросети. В ролике разобран блог @eleonora_marketing.</p>
+    <h4>Зачем это вам</h4>
     <ul>
-      <li><b>Видно, что заходит.</b> Лайки, комментарии, просмотры и вовлечённость по каждому посту, лучшие посты сверху.</li>
-      <li><b>Ролики расшифрованы.</b> Полный текст речи, а нейросеть описывает, что в кадре и чем цепляют первые 3&nbsp;секунды.</li>
-      <li><b>Голос аудитории.</b> Комментарии зрителей собраны прямо под постами.</li>
-      <li><b>Вечер работы — пара минут.</b> Не нужно выгружать посты и сводить таблицы вручную.</li>
+      <li><b>Видно, что заходит.</b> Лайки, комментарии, просмотры и вовлечённость по каждому посту, лучшие посты сверху.</li>
+      <li><b>Ролики расшифрованы.</b> Полный текст речи, а нейросеть описывает, что в кадре и чем цепляют первые 3&nbsp;секунды.</li>
+      <li><b>Голос аудитории.</b> Комментарии зрителей собраны прямо под постами.</li>
+      <li><b>Вечер работы — пара минут.</b> Не нужно выгружать посты и сводить таблицы вручную.</li>
     </ul>
-    <h4>Как это работает</h4>
+    <h4>Как это работает</h4>
     <ol>
-      <li>Отправляете боту ссылку на любой открытый профиль.</li>
-      <li>Выбираете количество постов или период и что сделать: расшифровать речь, описать картинки.</li>
-      <li>Получаете отчёт с поиском и сортировкой, таблицу и файл, который можно отдать нейросети с вопросом.</li>
+      <li>Отправляете боту ссылку на любой открытый профиль.</li>
+      <li>Выбираете количество постов или период и что сделать: расшифровать речь, описать картинки.</li>
+      <li>Получаете отчёт с поиском и сортировкой, таблицу и файл, который можно отдать нейросети с вопросом.</li>
     </ol>
     <h4>Кому подходит</h4>
-    <p>Маркетологам, SMM-специалистам и экспертам: разобрать конкурентов, выбрать блогеров для рекламы или понять, какие темы заходят в вашей нише.</p>
+    <p>Маркетологам, SMM-специалистам и экспертам: разобрать конкурентов, выбрать блогеров для рекламы или понять, какие темы заходят в вашей нише.</p>
     <div class="dlg-btns"><button class="btn btn-main" type="button" data-order="Разбор любого Instagram">Заказать</button><a class="btn btn-cta" href="#contact" data-close>Написать «РАЗБОР»</a></div>
   </div>
 </dialog>
