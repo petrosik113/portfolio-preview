@@ -477,6 +477,17 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
 
 [hidden]{display:none!important}
 
+.btn,.chip{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease,color .18s ease}
+@media (hover:hover){
+  .btn:hover{transform:translateY(-2px)}
+  .btn-main:hover{background:#8ACBFF;box-shadow:0 0 0 3px rgba(78,164,245,.35),0 10px 28px rgba(78,164,245,.55)}
+  .btn-cta:hover{background:var(--orange);border-color:var(--orange);color:#1A1208;box-shadow:0 0 0 3px rgba(242,163,94,.3),0 10px 28px rgba(242,163,94,.5)}
+  .btn-ghost:hover{background:var(--accent-bg);border-color:var(--accent);color:#fff;box-shadow:0 0 0 3px rgba(78,164,245,.25),0 8px 22px rgba(78,164,245,.3)}
+  .btn-msg:hover{border-color:var(--m-c);box-shadow:0 0 0 3px var(--m-bd),0 8px 24px var(--m-bd)}
+  .chip:hover{border-color:var(--accent);color:var(--text)}
+}
+.btn:active{transform:translateY(0) scale(.97);box-shadow:none}
+
 .count{margin:0 0 14px;font-size:var(--fs-small);font-weight:700;color:var(--orange)}
 .sec-head .count{margin:0}
 
@@ -527,7 +538,6 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
           <button class="btn btn-main" type="button" data-order="">Заказать решение</button>
           <a class="btn btn-ghost" href="#demo">Смотреть демо</a>
         </div>
-        <div class="hero-meta"><span>Не сидите в телефоне до полуночи</span><span>Ни один клиент не теряется, даже когда вы не на связи</span><span>Можно уехать в отпуск, и ничего не сломается</span><span>Берёте больше клиентов, не нанимая людей</span><span>Все заявки и деньги видно на одном экране</span><span>Ни в чём не нужно разбираться: делаю и учу</span></div>
       </div>
       <figure class="hero-video hero-photo" style="margin:0">
         <div class="frame photo cut"><picture><source media="(max-width:599px)" srcset="img/nikita-mirror.jpg" width="1236" height="780"><img src="img/nikita-rose.webp" alt="Никита Ангол" width="1072" height="1630"></picture></div>
