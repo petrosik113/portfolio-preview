@@ -82,6 +82,9 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:va
 .nav-links{display:flex;gap:26px;font-size:15px}
 .nav-links a{color:var(--muted)} .nav-links a:hover{color:var(--text)}
 .nav .btn{padding:11px 16px;font-size:14px}
+.nav-btns{display:flex;gap:10px}
+
+@media (max-width:1023px){.nav-btns .btn-main{display:none}}
 @media (max-width:820px){.nav-links{display:none}}
 
 
@@ -300,7 +303,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   header.open .burger i:nth-child(1){transform:translateY(7px) rotate(45deg)}
   header.open .burger i:nth-child(2){opacity:0}
   header.open .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .nav .btn-cta{margin-left:auto}
+  .nav .nav-btns{margin-left:auto}
   .m-menu:not([hidden]){display:grid;gap:4px;padding:12px var(--gutter) 22px;border-top:1px solid var(--border);background:var(--bg)}
   .m-menu a:not(.btn){padding:13px 0;font-size:19px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border)}
   .m-menu .btn{margin-top:14px;justify-content:center}
@@ -311,7 +314,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   :root{--gap-sec:clamp(108px,16vh,150px)}
   body{font-size:16px}
   .nav{height:64px}
-  .nav .btn-cta{display:none}
+  .nav .nav-btns{display:none}
   .burger{margin-left:auto}
 
   
@@ -437,8 +440,8 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
 .final-col{display:grid;gap:12px;align-content:start;padding:clamp(20px,3vw,32px);border:1px solid var(--border);border-radius:18px;background:var(--bg)}
 .final-col small{font:500 12.5px/1.3 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .final-col h3{font-size:clamp(22px,2.4vw,30px);line-height:1.15;margin:0}
-.final-col--go{border-color:rgba(242,163,94,.45)}
-.final-col--go small{color:var(--orange)}
+.final-col--go{border-color:rgba(78,164,245,.45)}
+.final-col--go small{color:var(--accent)}
 .final-col .contact{flex-direction:column;align-items:stretch;margin-top:6px}
 .final-col .contact .btn{justify-content:center}
 @media (max-width:860px){.final-grid{grid-template-columns:1fr}}
@@ -485,7 +488,7 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
   .hero-text{display:flex;flex-direction:column;justify-content:flex-end;gap:12px}
   .hero-actions{order:4;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
   .hero-actions .btn{width:100%;justify-content:center;padding:14px 8px;font-size:14.5px}
-  .hero-actions .btn-main{grid-column:1/-1;font-size:16px;padding-block:16px}
+  .hero-actions .btn:first-child{grid-column:1/-1;font-size:16px;padding-block:16px}
   .hero .lead{order:5}
   .hero-meta{order:6}
 }
@@ -501,12 +504,13 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
     <nav class="nav-links">
       <a href="#demo">Решения</a><a href="#cases">Примеры</a><a href="#how">Как работаю</a>
     </nav>
-    <a class="btn btn-cta" href="#contact">Написать «РАЗБОР»</a>
+    <div class="nav-btns"><a class="btn btn-cta" href="#contact">Написать «РАЗБОР»</a><button class="btn btn-main" type="button" data-order="" data-order-kick="Сразу к делу">Сразу к делу</button></div>
     <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="m-menu"><i></i><i></i><i></i></button>
   </div>
   <nav class="m-menu" id="m-menu" hidden>
     <a href="#demo">Решения</a><a href="#cases">Примеры</a><a href="#how">Как работаю</a>
     <a class="btn btn-cta" href="#contact">Написать «РАЗБОР»</a>
+    <button class="btn btn-main" type="button" data-order="" data-order-kick="Сразу к делу">Сразу к делу</button>
   </nav>
 </header>
 
@@ -519,8 +523,8 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
         <h1>Теперь <em>автоматизирую</em> бизнесы</h1>
         <p class="lead">Для экспертов и бизнеса, который держится на вас одном. Забираю рутину, которая съедает ваш день: одни и те же ответы клиентам, запись, оплаты, напоминания, таблицы. Клиенты получают ответ сразу, даже ночью, а вы можете уехать на пару недель и не переживать, что всё развалится.</p>
         <div class="hero-actions">
-          <a class="btn btn-main" href="#contact">Получить бесплатный разбор</a>
-          <button class="btn btn-cta" type="button" data-order="">Заказать решение</button>
+          <a class="btn btn-cta" href="#contact">Получить бесплатный разбор</a>
+          <button class="btn btn-main" type="button" data-order="">Заказать решение</button>
           <a class="btn btn-ghost" href="#demo">Смотреть демо</a>
         </div>
         <div class="hero-meta"><span>Не сидите в телефоне до полуночи</span><span>Ни один клиент не теряется, даже когда вы не на связи</span><span>Можно уехать в отпуск, и ничего не сломается</span><span>Берёте больше клиентов, не нанимая людей</span><span>Все заявки и деньги видно на одном экране</span><span>Ни в чём не нужно разбираться: делаю и учу</span></div>
@@ -589,63 +593,63 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
       <div class="grid" id="grid">
         <article class="card" data-c="off exp">
           <div class="frame vid"><img src="video/d02-kvalifikator.jpg" alt="Обложка видео: ИИ-администратор для салона" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/753e8adc-2267-49a0-8972-28158ae93bc0" aria-label="Смотреть видео: ИИ-администратор для салона"><i></i></button><div class="dur">0:45</div></div>
-          <div class="card-body"><span class="pill">Telegram · Instagram · WhatsApp</span><h3>Администратор, который не спит</h3><p>Пишет клиенту как живой администратор, отвечает на возражения и передаёт вам готовую заявку.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-kvalifikator">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Администратор, который не спит">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">Telegram · Instagram · WhatsApp</span><h3>Администратор, который не спит</h3><p>Пишет клиенту как живой администратор, отвечает на возражения и передаёт вам готовую заявку.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-kvalifikator">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Администратор, который не спит">Заказать</button></div></div>
         </article>
         <article class="card" data-c="off exp">
           <div class="frame vid"><img src="video/d09-crm.jpg" alt="Обложка видео: CRM для бухфирмы, стройки и консультанта" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/4a83c92d-81df-444c-99a0-49e9c59c8547" aria-label="Смотреть видео: CRM для бухфирмы, стройки и консультанта"><i></i></button><div class="dur">1:09</div></div>
-          <div class="card-body"><span class="pill">под ваш процесс</span><h3>Все клиенты и сроки в одном окне</h3><p>Клиенты, сроки, объекты и задачи в одном месте. Напоминания приходят в Telegram, смету считает нейросеть.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-crm">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Все клиенты и сроки в одном окне">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">под ваш процесс</span><h3>Все клиенты и сроки в одном окне</h3><p>Клиенты, сроки, объекты и задачи в одном месте. Напоминания приходят в Telegram, смету считает нейросеть.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-crm">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Все клиенты и сроки в одном окне">Заказать</button></div></div>
         </article>
         <article class="card" data-c="off exp">
           <div class="frame vid"><img src="video/d10-svyazka.jpg" alt="Обложка видео: продающий сайт из одного сообщения" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/912daf1d-0168-43f2-9136-71a0888c5fb5" aria-label="Смотреть видео: продающий сайт из одного сообщения"><i></i></button><div class="dur">0:36</div></div>
-          <div class="card-body"><span class="pill">для любой ниши</span><h3>Сайт, который не стыдно отправить</h3><p>Описываете бизнес одним сообщением, нейросеть собирает сайт с ценами и формой записи. Заявки приходят в Telegram.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-svyazka">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Сайт, который не стыдно отправить">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">для любой ниши</span><h3>Сайт, который не стыдно отправить</h3><p>Описываете бизнес одним сообщением, нейросеть собирает сайт с ценами и формой записи. Заявки приходят в Telegram.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-svyazka">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Сайт, который не стыдно отправить">Заказать</button></div></div>
         </article>
         <article class="card" data-c="cnt exp">
           <div class="frame vid"><img src="video/d01-karuseli.jpg" alt="Обложка видео: карусели за пару минут" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/ae1a9c47-5220-422a-952c-0c595a876107" aria-label="Смотреть видео: карусели за пару минут"><i></i></button><div class="dur">0:28</div></div>
-          <div class="card-body"><span class="pill">Instagram · Telegram</span><h3>Карусели за пару минут</h3><p>Даёте тему, бот пишет текст в вашем стиле и собирает готовые слайды.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-karuseli">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Карусели за пару минут">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">Instagram · Telegram</span><h3>Карусели за пару минут</h3><p>Даёте тему, бот пишет текст в вашем стиле и собирает готовые слайды.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-karuseli">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Карусели за пару минут">Заказать</button></div></div>
         </article>
         <article class="card" data-c="exp cnt">
           <div class="frame vid"><img src="video/d05-transkribator.jpg" alt="Обложка видео: транскрибатор созвонов в Telegram" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/0ae60cbd-0b3f-4ef5-9a20-8a7a00eb349f" aria-label="Смотреть видео: транскрибатор созвонов в Telegram"><i></i></button><div class="dur">0:52</div></div>
-          <div class="card-body"><span class="pill">созвоны и голосовые</span><h3>Итоги созвона за пару минут</h3><p>Расшифровывает созвон, делает итоги, идеи для контента и коммерческое предложение.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-transkribator">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Итоги созвона за пару минут">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">созвоны и голосовые</span><h3>Итоги созвона за пару минут</h3><p>Расшифровывает созвон, делает итоги, идеи для контента и коммерческое предложение.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-transkribator">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Итоги созвона за пару минут">Заказать</button></div></div>
         </article>
         <article class="card" data-c="off">
           <div class="frame vid"><img src="video/d08-sertifikaty.jpg" alt="Обложка видео: подарочные сертификаты для салона и спа" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/b9ff5188-3ffe-4d52-aa33-895093e67c4f" aria-label="Смотреть видео: подарочные сертификаты для салона и спа"><i></i></button><div class="dur">1:00</div></div>
-          <div class="card-body"><span class="pill">салоны и спа</span><h3>Подарочные сертификаты</h3><p>Гость покупает и оплачивает онлайн, салон проверяет по коду, сайт сам напоминает о сроке.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-sertifikaty">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Подарочные сертификаты">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">салоны и спа</span><h3>Подарочные сертификаты</h3><p>Гость покупает и оплачивает онлайн, салон проверяет по коду, сайт сам напоминает о сроке.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-sertifikaty">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Подарочные сертификаты">Заказать</button></div></div>
         </article>
         <article class="card" data-c="off">
           <div class="frame vid"><img src="video/d07-smeta.jpg" alt="Обложка видео: CRM с ИИ-сметой по дизайн-проекту" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/29045b0f-8824-452d-8bc6-40d615480ccc" aria-label="Смотреть видео: CRM с ИИ-сметой по дизайн-проекту"><i></i></button><div class="dur">0:46</div></div>
-          <div class="card-body"><span class="pill">стройка и ремонт</span><h3>Смета по дизайн-проекту за день</h3><p>Загружаете дизайн-проект, ИИ считает смету по вашему прайсу и честно пишет, что проверить.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-smeta">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Смета по дизайн-проекту за день">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">стройка и ремонт</span><h3>Смета по дизайн-проекту за день</h3><p>Загружаете дизайн-проект, ИИ считает смету по вашему прайсу и честно пишет, что проверить.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-smeta">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Смета по дизайн-проекту за день">Заказать</button></div></div>
         </article>
         <article class="card" data-c="off exp">
           <div class="frame vid"><img src="video/d06-kaspi.jpg" alt="Обложка видео: консультант с приёмом оплаты Kaspi" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/48712f05-3739-45dd-8171-3f31a5f30d41" aria-label="Смотреть видео: консультант с приёмом оплаты Kaspi"><i></i></button><div class="dur">0:42</div></div>
-          <div class="card-body"><span class="pill">Kaspi Pay</span><h3>Менеджер, который сам проверяет оплату</h3><p>Ведёт диалог, присылает ссылку на оплату и сам проверяет чек. Поддельный чек не пройдёт.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-kaspi">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Менеджер, который сам проверяет оплату">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">Kaspi Pay</span><h3>Менеджер, который сам проверяет оплату</h3><p>Ведёт диалог, присылает ссылку на оплату и сам проверяет чек. Поддельный чек не пройдёт.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-kaspi">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Менеджер, который сам проверяет оплату">Заказать</button></div></div>
         </article>
         <article class="card" data-c="exp">
           <div class="frame vid"><img src="video/d14-platforma.jpg" alt="Обложка видео: своя платформа онлайн-уроков" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/70d5121a-29e8-43cf-9013-661352b5cfbc" aria-label="Смотреть видео: своя платформа онлайн-уроков"><i></i></button><div class="dur">1:05</div></div>
-          <div class="card-body"><span class="pill">замена GetCourse</span><h3>Своя платформа для курсов</h3><p>Курсы, ученики, прогресс и доступ по коду. Ученик открывает уроки прямо в Telegram или на сайте.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-platforma">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Своя платформа для курсов">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">замена GetCourse</span><h3>Своя платформа для курсов</h3><p>Курсы, ученики, прогресс и доступ по коду. Ученик открывает уроки прямо в Telegram или на сайте.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-platforma">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Своя платформа для курсов">Заказать</button></div></div>
         </article>
         <article class="card" data-c="exp">
           <div class="frame vid"><img src="video/d15-kurator.jpg" alt="Обложка видео: ИИ-куратор для учебного чата" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/a017598f-8ffe-4f4f-8c54-75223abb33f5" aria-label="Смотреть видео: ИИ-куратор для учебного чата"><i></i></button><div class="dur">0:57</div></div>
-          <div class="card-body"><span class="pill">для учебных чатов</span><h3>Помощник куратора в учебном чате</h3><p>Находит вопросы учеников в чате, предлагает три ответа в вашем стиле и каждое утро присылает разбор по ученикам.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-kurator">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Помощник куратора в учебном чате">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">для учебных чатов</span><h3>Помощник куратора в учебном чате</h3><p>Находит вопросы учеников в чате, предлагает три ответа в вашем стиле и каждое утро присылает разбор по ученикам.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-kurator">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Помощник куратора в учебном чате">Заказать</button></div></div>
         </article>
         <article class="card" data-c="off exp">
           <div class="frame vid"><img src="video/d12-parsery.jpg" alt="Обложка видео: база клиентов за вечер, парсер 2ГИС и Telegram" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/e714b91e-b858-4e77-a512-6f9975cb6908" aria-label="Смотреть видео: база клиентов за вечер, парсер 2ГИС и Telegram"><i></i></button><div class="dur">0:44</div></div>
-          <div class="card-body"><span class="pill">поиск клиентов</span><h3>База клиентов за вечер</h3><p>Собирает компании с карт в таблицу: телефон, сайт, соцсети, рейтинг. И находит в чатах тех, кто сам ищет подрядчика.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-parsery">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="База клиентов за вечер">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">поиск клиентов</span><h3>База клиентов за вечер</h3><p>Собирает компании с карт в таблицу: телефон, сайт, соцсети, рейтинг. И находит в чатах тех, кто сам ищет подрядчика.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-parsery">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="База клиентов за вечер">Заказать</button></div></div>
         </article>
         <article class="card" data-c="cnt exp">
           <div class="frame vid"><img src="video/d19-insta.jpg" alt="Обложка видео: разбор любого Instagram за пару минут" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/deb98b00-8787-4f15-8be1-e2c291a0aca8" aria-label="Смотреть видео: разбор любого Instagram"><i></i></button><div class="dur">1:07</div></div>
-          <div class="card-body"><span class="pill">для маркетинга</span><h3>Разбор любого Instagram</h3><p>Ссылка на профиль, и через пару минут отчёт: что говорят в роликах, чем цепляют первые 3&nbsp;секунды, вовлечённость и комментарии.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-insta">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Разбор любого Instagram">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">для маркетинга</span><h3>Разбор любого Instagram</h3><p>Ссылка на профиль, и через пару минут отчёт: что говорят в роликах, чем цепляют первые 3&nbsp;секунды, вовлечённость и комментарии.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-insta">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Разбор любого Instagram">Заказать</button></div></div>
         </article>
         <article class="card" data-c="cnt off exp">
           <div class="frame vid"><img src="video/d13-studiya.jpg" alt="Обложка видео: фото и видео нейросетями в одном окне" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/3ca29280-f8a5-44fc-87ec-c6df03da578e" aria-label="Смотреть видео: фото и видео нейросетями в одном окне"><i></i></button><div class="dur">1:20</div></div>
-          <div class="card-body"><span class="pill">фото и видео</span><h3>Фото и видео нейросетями</h3><p>Почти 30 нейросетей в одном окне. Цена видна до запуска, без подписки, траты сами попадают в расходы.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-studiya">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Фото и видео нейросетями">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">фото и видео</span><h3>Фото и видео нейросетями</h3><p>Почти 30 нейросетей в одном окне. Цена видна до запуска, без подписки, траты сами попадают в расходы.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-studiya">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Фото и видео нейросетями">Заказать</button></div></div>
         </article>
         <article class="card" data-c="exp">
           <div class="frame vid"><img src="video/d04-repetitor.jpg" alt="Обложка видео: личный репетитор в Telegram" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/3182d104-aadd-460e-a9b9-61d6709d76d3" aria-label="Смотреть видео: личный репетитор в Telegram"><i></i></button><div class="dur">0:49</div></div>
-          <div class="card-body"><span class="pill">обучение каждый день</span><h3>Личный репетитор</h3><p>Утром карточки, днём короткие тесты, ошибки разбирает сам. Языки, нейросети, код, игры для детей.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-repetitor">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Личный репетитор">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">обучение каждый день</span><h3>Личный репетитор</h3><p>Утром карточки, днём короткие тесты, ошибки разбирает сам. Языки, нейросети, код, игры для детей.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-repetitor">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Личный репетитор">Заказать</button></div></div>
         </article>
         <article class="card" data-c="off exp">
           <div class="frame vid"><img src="video/d03-finansist.jpg" alt="Обложка видео: финансовый помощник в Telegram" loading="lazy"><button class="play" type="button" data-video="https://kinescope.io/embed/65907b29-0188-47bc-8ebe-9b5fd4e47877" aria-label="Смотреть видео: финансовый помощник в Telegram"><i></i></button><div class="dur">0:35</div></div>
-          <div class="card-body"><span class="pill">голосом или текстом</span><h3>Учёт денег голосом</h3><p>Говорите «кофе 8 рублей», трата сама попадает в таблицу. Отчёты и лимиты.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-finansist">Подробнее</button><button class="btn btn-cta btn-more" type="button" data-order="Учёт денег голосом">Заказать</button></div></div>
+          <div class="card-body"><span class="pill">голосом или текстом</span><h3>Учёт денег голосом</h3><p>Говорите «кофе 8 рублей», трата сама попадает в таблицу. Отчёты и лимиты.</p><div class="card-btns"><button class="btn btn-ghost btn-more" type="button" data-more="m-finansist">Подробнее</button><button class="btn btn-main btn-more" type="button" data-order="Учёт денег голосом">Заказать</button></div></div>
         </article>
       </div>
 <div class="more"><button class="btn btn-ghost" id="more" type="button">Показать ещё</button></div>
@@ -665,48 +669,48 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
           <div class="case-who"><h3>Салоны и студии</h3><span>Администратор, который не спит</span></div>
           <blockquote class="sc-q">«Я долго отвечаю, и клиенты из-за этого теряются»<small>мастер по наращиванию ресниц, из интервью</small></blockquote>
           <div class="ab"><b class="a">ДЕЛАЮ</b><p>Помощник отвечает клиентам в Instagram, Telegram и WhatsApp за секунды, узнаёт услугу и удобное время и передаёт вам готовую запись.</p><b class="bb">ИТОГ</b><p>Клиенты не уходят к тем, кто ответил быстрее, даже пока вы на процедуре.</p></div>
-          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-cta btn-more" type="button" data-order="Администратор, который не спит">Хочу так же</button></div>
+          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-main btn-more" type="button" data-order="Администратор, который не спит">Хочу так же</button></div>
         </div>
         <div class="case sc">
           <div class="case-who"><h3>Бухгалтерия и сервисы со сроками</h3><span>Все клиенты и сроки в одном окне</span></div>
           <blockquote class="sc-q">«Я работаю больше как бухгалтер, нежели чем как руководитель»<small>владелец бухгалтерской фирмы, из интервью</small></blockquote>
           <div class="ab"><b class="a">ДЕЛАЮ</b><p>Собираю простую систему: по каждому клиенту видно сроки и задачи, а напоминания о платежах и отчётах сами приходят в Telegram.</p><b class="bb">ИТОГ</b><p>Вы перестаёте держать всё в голове и снова управляете бизнесом.</p></div>
-          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-cta btn-more" type="button" data-order="Все клиенты и сроки в одном окне">Хочу так же</button></div>
+          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-main btn-more" type="button" data-order="Все клиенты и сроки в одном окне">Хочу так же</button></div>
         </div>
         <div class="case sc">
           <div class="case-who"><h3>Эксперты и блогеры</h3><span>Карусели за пару минут</span></div>
           <blockquote class="sc-q">«Соцсети, ведение личного блога — это как 2 работа, можно сказать, которая пока что не приносит денег»<small>турагент, из интервью</small></blockquote>
           <div class="ab"><b class="a">ДЕЛАЮ</b><p>Даёте тему, бот пишет текст в вашем стиле и собирает готовые слайды для Instagram.</p><b class="bb">ИТОГ</b><p>Пост за пару минут вместо вечера, и блог перестаёт быть второй работой.</p></div>
-          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-cta btn-more" type="button" data-order="Карусели за пару минут">Хочу так же</button></div>
+          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-main btn-more" type="button" data-order="Карусели за пару минут">Хочу так же</button></div>
         </div>
         <div class="case sc">
           <div class="case-who"><h3>Агентства, консультанты, отделы продаж</h3><span>Итоги созвона за пару минут</span></div>
           <blockquote class="sc-q">«Моя работа заключается в постоянном расфокусе… процентов 80–85 — разговоры с кем-нибудь»<small>руководитель IT-компании, из интервью</small></blockquote>
           <div class="ab"><b class="a">ДЕЛАЮ</b><p>Отправляете запись созвона боту и через пару минут получаете итоги, задачи и готовое коммерческое предложение.</p><b class="bb">ИТОГ</b><p>Ничего не нужно вспоминать и переписывать, КП уходит клиенту в тот же день.</p></div>
-          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-cta btn-more" type="button" data-order="Итоги созвона за пару минут">Хочу так же</button></div>
+          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-main btn-more" type="button" data-order="Итоги созвона за пару минут">Хочу так же</button></div>
         </div>
         <div class="case sc">
           <div class="case-who"><h3>Спа, салоны, барбершопы</h3><span>Подарочные сертификаты</span></div>
           <p class="sc-sit">Сертификаты продаются только на ресепшене, а учёт ведётся в тетради.</p>
           <div class="ab"><b class="a">ДЕЛАЮ</b><p>Свой сайт, где гости сами покупают и оплачивают сертификат, а администратор проверяет его по коду.</p><b class="bb">ИТОГ</b><p>Сертификаты продаются ночью и в выходные, а сайт сам напоминает о сроке и предлагает подарить снова.</p></div>
-          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-cta btn-more" type="button" data-order="Подарочные сертификаты">Хочу так же</button></div>
+          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-main btn-more" type="button" data-order="Подарочные сертификаты">Хочу так же</button></div>
         </div>
         <div class="case sc">
           <div class="case-who"><h3>Онлайн-школы и наставники</h3><span>Своя платформа для курсов</span></div>
           <p class="sc-sit">Платите за большую платформу каждый месяц, а пользуетесь малой частью.</p>
           <div class="ab"><b class="a">ДЕЛАЮ</b><p>Ставлю вашу платформу: уроки, ученики, доступ по коду, прогресс. Ученики учатся прямо в Telegram.</p><b class="bb">ИТОГ</b><p>Нет ежемесячной аренды, и видно, кто из учеников отстаёт.</p></div>
-          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-cta btn-more" type="button" data-order="Своя платформа для курсов">Хочу так же</button></div>
+          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-main btn-more" type="button" data-order="Своя платформа для курсов">Хочу так же</button></div>
         </div>
         <div class="case sc">
           <div class="case-who"><h3>Стройка и ремонт</h3><span>Смета по дизайн-проекту за день</span></div>
           <p class="sc-sit">Вечерами пересчитываете смету по листам дизайн-проекта.</p>
           <div class="ab"><b class="a">ДЕЛАЮ</b><p>Загружаете дизайн-проект, ИИ считает смету по вашему прайсу и сам отмечает строки, которые надо проверить.</p><b class="bb">ИТОГ</b><p>Смета в тот же день, а не через неделю. На демо-объекте ИИ посчитал 218 строк за 2 часа 38 минут.</p></div>
-          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-cta btn-more" type="button" data-order="Смета по дизайн-проекту за день">Хочу так же</button></div>
+          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-main btn-more" type="button" data-order="Смета по дизайн-проекту за день">Хочу так же</button></div>
         </div>
         <div class="case sc">
           <div class="case-who"><h3>Мастерские и автосервисы</h3><span>Все клиенты и сроки в одном окне</span></div>
           <div class="ab"><b class="a">ДЕЛАЮ</b><p>Делаю систему настолько простой, что ей удобнее пользоваться, чем блокнотом: запись, мастера, фото до и после.</p><b class="bb">ИТОГ</b><p>Ничего не теряется, даже если блокнот остался в другой куртке.</p></div>
-          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-cta btn-more" type="button" data-order="Все клиенты и сроки в одном окне">Хочу так же</button></div>
+          <div class="card-btns"><a class="btn btn-ghost btn-more" href="#demo">Смотреть демо</a><button class="btn btn-main btn-more" type="button" data-order="Все клиенты и сроки в одном окне">Хочу так же</button></div>
         </div>
       </div>
       <div class="more"><button class="btn btn-ghost" id="cases-more" type="button">Показать ещё</button></div>
@@ -746,13 +750,13 @@ h3,.card-body h3{font-size:clamp(18px,1.4vw,20px)}
             <small>Не знаете, с чего начать?</small>
             <h3>Напишите слово <span class="word">«РАЗБОР»</span></h3>
             <p class="muted">Бесплатно разберём, где у вас уходит время, и что можно забрать на автомат.</p>
-            <div class="contact"><button class="btn btn-main" type="button" data-order-msg="Разбор">Написать «РАЗБОР»</button></div>
+            <div class="contact"><button class="btn btn-cta" type="button" data-order-msg="Разбор">Написать «РАЗБОР»</button></div>
           </div>
           <div class="final-col final-col--go" data-msg="Здравствуйте, Никита! Пишу с сайта: хочу сразу заказать автоматизацию для своего бизнеса. Давайте обсудим задачу, сроки и стоимость.">
             <small>Уже знаете, что нужно?</small>
             <h3>Сразу к делу</h3>
             <p class="muted">Без разбора: обсудим задачу, сроки и стоимость и начнём работу.</p>
-            <div class="contact"><button class="btn btn-cta" type="button" data-order-msg="Сразу к делу">Сразу к делу</button></div>
+            <div class="contact"><button class="btn btn-main" type="button" data-order-msg="Сразу к делу">Сразу к делу</button></div>
           </div>
         </div>
         <p class="ig-tip" hidden></p>
@@ -1318,7 +1322,7 @@ document.querySelectorAll('[data-more]').forEach(function(b){
   var header=document.querySelector('header'), btn=document.getElementById('burger'), menu=document.getElementById('m-menu');
   function set(open){header.classList.toggle('open',open);menu.hidden=!open;btn.setAttribute('aria-expanded',open?'true':'false')}
   btn.addEventListener('click',function(){set(menu.hidden)});
-  menu.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+  menu.addEventListener('click',function(e){if(e.target.closest('a,button'))set(false)});
 })();
 var touch=window.matchMedia('(pointer:coarse)').matches;
 function tip(box,text){var el=box.querySelector('.ig-tip')||document.querySelector('#contact .ig-tip');if(!el)return;el.textContent=text;el.hidden=false;setTimeout(function(){el.hidden=true},8000)}
@@ -1341,7 +1345,7 @@ document.querySelectorAll('[data-msgr]').forEach(function(a){
   document.querySelectorAll('[data-order]').forEach(function(b){
     b.addEventListener('click',function(){
       var name=b.dataset.order;
-      kick.textContent='Заказать';
+      kick.textContent=b.dataset.orderKick||'Заказать';
       box.dataset.msg=name?'Здравствуйте, Никита! Пишу с сайта: хочу заказать «'+name+'». Давайте обсудим, как настроить это под мой бизнес.':'Здравствуйте, Никита! Пишу с сайта: хочу сразу заказать автоматизацию для своего бизнеса. Давайте обсудим задачу, сроки и стоимость.';
       what.textContent=name?'Решение: «'+name+'». Сообщение уже готово, останется нажать «отправить».':'Сообщение уже готово, останется нажать «отправить».';
       var open=b.closest('dialog'); if(open&&open!==dlg)open.close();
